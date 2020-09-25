@@ -1,5 +1,7 @@
 import jwt from 'jsonwebtoken';
 import config from './config';
+
+// eslint-disable-next-line arrow-body-style
 const getToken = (user) => {
   return jwt.sign(
     {
@@ -11,10 +13,11 @@ const getToken = (user) => {
     config.JWT_SECRET,
     {
       expiresIn: '48h',
-    }
+    },
   );
 };
 
+// eslint-disable-next-line consistent-return
 const isAuth = (req, res, next) => {
   const token = req.headers.authorization;
 
@@ -26,7 +29,7 @@ const isAuth = (req, res, next) => {
       }
       req.user = decode;
       next();
-      return;
+      return () => { };
     });
   } else {
     return res.status(401).send({ message: 'Token is not supplied.' });
@@ -34,6 +37,7 @@ const isAuth = (req, res, next) => {
 };
 
 const isAdmin = (req, res, next) => {
+  // eslint-disable-next-line no-console
   console.log(req.user);
   if (req.user && req.user.isAdmin) {
     return next();

@@ -36,7 +36,7 @@ function ShippingScreen(props) {
           </li>
           <li>
             <label htmlFor="city">
-              City
+              Town / City
           </label>
             <input type="text" name="city" id="city" onChange={(e) => setCity(e.target.value)}>
             </input>
@@ -50,7 +50,7 @@ function ShippingScreen(props) {
           </li>
           <li>
             <label htmlFor="country">
-              Country
+              County
           </label>
             <input type="text" name="country" id="country" onChange={(e) => setCountry(e.target.value)}>
             </input>

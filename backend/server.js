@@ -15,6 +15,7 @@ mongoose
     useUnifiedTopology: true,
     useCreateIndex: true,
   })
+  // eslint-disable-next-line no-console
   .catch((error) => console.log(error.reason));
 
 const app = express();
@@ -33,5 +34,6 @@ app.get('*', (req, res) => {
 });
 
 app.listen(config.PORT, () => {
+  // eslint-disable-next-line no-console
   console.log('Server started at http://localhost:5000');
 });

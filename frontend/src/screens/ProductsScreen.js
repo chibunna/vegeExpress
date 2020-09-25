@@ -98,7 +98,9 @@ function ProductsScreen(props) {
   return (
     <div className="content content-margined">
       <div className="product-header">
-        <h3>Products</h3>
+        <div className="productTitle">
+          <h3>Products</h3>
+        </div>
         <button className="button primary" onClick={() => openModal({})}>
           Create Product
         </button>
@@ -147,8 +149,9 @@ function ProductsScreen(props) {
                 <input type="file" onChange={uploadFileHandler}></input>
                 {uploading && <div>Uploading...</div>}
               </li>
+              {/* comment out later (brand) */}
               <li>
-                <label htmlFor="brand">Brand</label>
+                <label htmlFor="brand">Quantity (KG)</label>
                 <input
                   type="text"
                   name="brand"
@@ -213,7 +216,7 @@ function ProductsScreen(props) {
               <th>Name</th>
               <th>Price</th>
               <th>Category</th>
-              <th>Brand</th>
+              <th>Quantity</th>
               <th>Action</th>
             </tr>
           </thead>

@@ -8,7 +8,7 @@ const reviewSchema = new mongoose.Schema(
   },
   {
     timestamps: true,
-  }
+  },
 );
 const prodctSchema = new mongoose.Schema({
   name: { type: String, required: true },

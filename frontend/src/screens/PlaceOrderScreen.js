@@ -42,7 +42,7 @@ function PlaceOrderScreen(props) {
       <div className="placeorder-info">
         <div>
           <h3>
-            Shipping
+            Delivery
           </h3>
           <div>
             {cart.shipping.address}, {cart.shipping.city},
@@ -88,7 +88,7 @@ function PlaceOrderScreen(props) {
                       </div>
                     </div>
                     <div className="cart-price">
-                      ${item.price}
+                      KSh{item.price}
                     </div>
                   </li>
                 )
@@ -96,7 +96,7 @@ function PlaceOrderScreen(props) {
           </ul>
         </div>
 
-      
+
       </div>
       <div className="placeorder-action">
         <ul>
@@ -108,19 +108,19 @@ function PlaceOrderScreen(props) {
           </li>
           <li>
             <div>Items</div>
-            <div>${itemsPrice}</div>
+            <div>KSh{itemsPrice}</div>
           </li>
           <li>
             <div>Shipping</div>
-            <div>${shippingPrice}</div>
+            <div>KSh{shippingPrice}</div>
           </li>
           <li>
             <div>Tax</div>
-            <div>${taxPrice}</div>
+            <div>KSh{taxPrice}</div>
           </li>
           <li>
             <div>Order Total</div>
-            <div>${totalPrice}</div>
+            <div>KSh{totalPrice}</div>
           </li>
         </ul>
 

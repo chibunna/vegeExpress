@@ -16,9 +16,11 @@ import ProfileScreen from './screens/ProfileScreen';
 import OrdersScreen from './screens/OrdersScreen';
 
 function App() {
+  // Set state
   const userSignin = useSelector((state) => state.userSignin);
   const { userInfo } = userSignin;
 
+  // Selector for side menu
   const openMenu = () => {
     document.querySelector('.sidebar').classList.add('open');
   };
@@ -26,20 +28,23 @@ function App() {
     document.querySelector('.sidebar').classList.remove('open');
   };
   return (
+    // setting routers
+    // Main menu
     <BrowserRouter>
       <div className="grid-container">
         <header className="header">
           <div className="brand">
             <button onClick={openMenu}>&#9776;</button>
-            <Link to="/">amazona</Link>
+            <Link to="/">VegeExpress</Link>
           </div>
           <div className="header-links">
+            <a href="about.html">About Us</a>
             <a href="cart.html">Cart</a>
             {userInfo ? (
               <Link to="/profile">{userInfo.name}</Link>
             ) : (
-              <Link to="/signin">Sign In</Link>
-            )}
+                <Link to="/signin">Sign In</Link>
+              )}
             {userInfo && userInfo.isAdmin && (
               <div className="dropdown">
                 <a href="#">Admin</a>
@@ -60,11 +65,11 @@ function App() {
           </button>
           <ul className="categories">
             <li>
-              <Link to="/category/Pants">Pants</Link>
+              <Link to="/category/Fruits">Fruits</Link>
             </li>
 
             <li>
-              <Link to="/category/Shirts">Shirts</Link>
+              <Link to="/category/Vegetables">Vegetables</Link>
             </li>
           </ul>
         </aside>
@@ -85,7 +90,7 @@ function App() {
             <Route path="/" exact={true} component={HomeScreen} />
           </div>
         </main>
-        <footer className="footer">All right reserved.</footer>
+        <footer className="footer">Vegetable Express All right reserved &copy;2020</footer>
       </div>
     </BrowserRouter>
   );
